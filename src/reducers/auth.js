@@ -5,7 +5,16 @@ export default (state={}, action)=>{
                 uid:action.uid
             }
         case 'LOGOUT':
-            return {}
+            return {} 
+        case 'CREATE_USER_SUCCESS':
+            const userId = action.user.uid
+            return{
+                ...state 
+            }
+        case 'CREATE_USER_FAIL':
+            return{
+                ...state
+            }
         default:
             return state;
     }

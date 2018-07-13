@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux'
-import {startLogin} from '../actions/auth'
+import {startLogin, startLoginWithGoogle} from '../actions/auth'
 
 export const LoginPage = ({startLogin}) => {
     return (
@@ -15,7 +15,7 @@ export const LoginPage = ({startLogin}) => {
 };
 
 const mapDispatchToProps =(dispatch)=>({
-    startLogin:()=> dispatch(startLogin())
+    startLogin:()=> dispatch(startLoginWithGoogle())
 })
 
 export default connect(undefined,mapDispatchToProps)(LoginPage)
