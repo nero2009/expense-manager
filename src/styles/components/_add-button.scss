@@ -16,8 +16,8 @@
   }
   
   .button::after {
-    background: -webkit-linear-gradient(top, #48CA24, #FD0A69 90%);
-    background: linear-gradient(to bottom, #48CA24, #FD0A69 90%);
+    background: -webkit-linear-gradient(top, #48CA24,rgba(253, 10, 10, 0.774) 90%);
+    background: linear-gradient(to bottom, #48CA24, rgba(253, 10, 10, 0.774) 90%);
     background-size: 100% 500%;
       bottom: 0;
     content: "";

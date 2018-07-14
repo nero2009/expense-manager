@@ -18,7 +18,8 @@ class ExpenseForm extends Component {
             calendarFocused:false,
             error:'',
             amountPlaceholder:'Amount',
-            desPlaceholder:'Description'
+            desPlaceholder:'Description',
+            notePlaceholder:'Notes(Optional)'
         }
     }
     
@@ -51,23 +52,6 @@ class ExpenseForm extends Component {
         this.setState(()=>({calendarFocused:focused}))
     }
 
-    onFocus =(e)=>{
-        const amount = this.state
-        this.setState(()=>({amountPlaceholder:''}))
-        if(!amount){
-            this.setState(()=>({amountPlaceholder:'Amount'}))
-        }
-        
-    }
-
-    onFocus1 =(e)=>{
-        const description = this.state
-        this.setState(()=>({desPlaceholder:''}))
-        if(!description){
-            this.setState(()=>({amountPlaceholder:'Description'}))
-        }
-        
-    }
 
     onSubmit = (e) => {
         e.preventDefault();
@@ -91,20 +75,22 @@ class ExpenseForm extends Component {
                 <form className="form" onSubmit={this.onSubmit}>
                     {this.state.error && <p className="form__error">{this.state.error}</p>}
 
-                    <div className="col-3 input-effect">
-                        <input className="effect-21" type="text" placeholder={this.state.desPlaceholder} value={this.state.description} onChange={this.onDescriptionChange} onFocusChange={this.onFocus}/>
+                    <div className="form-group input-effect">
+                        <input className="effect-21" type="text" placeholder={this.state.desPlaceholder} value={this.state.description} onChange={this.onDescriptionChange} />
                         <label>Description</label>
                         <span className="focus-border">
                             <i></i>
                         </span>
                     </div>
-                    <div className="col-3 input-effect">
-                        <input className="effect-21" type="text" placeholder={this.state.amountPlaceholder} value={this.state.amount} onChange={this.onAmountChange} onFocusChange={this.onFocus}/>
+                    <br/>
+                    <div className="form-group input-effect">
+                        <input className="effect-21" type="text" placeholder={this.state.amountPlaceholder} value={this.state.amount} onChange={this.onAmountChange} />
                         <label>Amount</label>
                         <span className="focus-border">
                             <i></i>
                         </span>
                     </div>
+                    <br/>
                     <SingleDatePicker
                         date={this.state.createdAt}
                         onDateChange={this.onDateChange}
@@ -113,13 +99,15 @@ class ExpenseForm extends Component {
                         numberOfMonths= {1}
                         isOutsideRange={()=> false}
                     />
-                    <textarea 
-                        className="textarea"
-                        placeholder="Add a note for your Expense(optional)"
-                        value={this.state.note}
-                        onChange={this.onNoteChange}
-                    >
-                    </textarea>
+                    <br/>
+                    <div className="form-group input-effect">
+                        <input className="effect-21 textarea"  placeholder={this.state.notePlaceholder} value={this.state.note} onChange={this.onNoteChange} />
+                        <label>Note</label>
+                        <span className="focus-border">
+                            <i></i>
+                        </span>
+                    </div>
+                    <br/>
                     <div>
                         <button className="button">Save Expense</button>
                     </div>
