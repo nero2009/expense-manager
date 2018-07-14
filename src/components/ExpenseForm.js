@@ -5,7 +5,7 @@ import {SingleDatePicker} from 'react-dates'
 import 'react-dates/initialize'
 
 const now =moment()
-console.log(now.format('MMM Do, YYYY'))
+
 
 class ExpenseForm extends Component {
     constructor(props){
@@ -16,7 +16,9 @@ class ExpenseForm extends Component {
             amount: props.expense ? (props.expense.amount/100).toString():'',
             createdAt: props.expense ? moment(props.expense.createdAt): moment(),
             calendarFocused:false,
-            error:''
+            error:'',
+            amountPlaceholder:'Amount',
+            desPlaceholder:'Description'
         }
     }
     
@@ -49,6 +51,24 @@ class ExpenseForm extends Component {
         this.setState(()=>({calendarFocused:focused}))
     }
 
+    onFocus =(e)=>{
+        const amount = this.state
+        this.setState(()=>({amountPlaceholder:''}))
+        if(!amount){
+            this.setState(()=>({amountPlaceholder:'Amount'}))
+        }
+        
+    }
+
+    onFocus1 =(e)=>{
+        const description = this.state
+        this.setState(()=>({desPlaceholder:''}))
+        if(!description){
+            this.setState(()=>({amountPlaceholder:'Description'}))
+        }
+        
+    }
+
     onSubmit = (e) => {
         e.preventDefault();
     
@@ -71,21 +91,20 @@ class ExpenseForm extends Component {
                 <form className="form" onSubmit={this.onSubmit}>
                     {this.state.error && <p className="form__error">{this.state.error}</p>}
 
-                    <input 
-                        className="text-input"
-                        type="text" 
-                        placeholder="Description"
-                        autoFocus
-                        value={this.state.description}
-                        onChange={this.onDescriptionChange}
-                    />
-                    <input
-                        className="text-input"
-                        type="text"
-                        placeholder="Amount"
-                        value={this.state.amount}
-                        onChange={this.onAmountChange}
-                    />
+                    <div className="col-3 input-effect">
+                        <input className="effect-21" type="text" placeholder={this.state.desPlaceholder} value={this.state.description} onChange={this.onDescriptionChange} onFocusChange={this.onFocus}/>
+                        <label>Description</label>
+                        <span className="focus-border">
+                            <i></i>
+                        </span>
+                    </div>
+                    <div className="col-3 input-effect">
+                        <input className="effect-21" type="text" placeholder={this.state.amountPlaceholder} value={this.state.amount} onChange={this.onAmountChange} onFocusChange={this.onFocus}/>
+                        <label>Amount</label>
+                        <span className="focus-border">
+                            <i></i>
+                        </span>
+                    </div>
                     <SingleDatePicker
                         date={this.state.createdAt}
                         onDateChange={this.onDateChange}
