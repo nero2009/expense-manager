@@ -2,10 +2,9 @@
     align-items: center;
     background: url('/images/bg.jpg');
     background-size: cover;
-    display: flex;
-    justify-content: center;
+    flex: 3.5;
     height: 100vh;
-    width: 100vw;
+    
 }
 
 .box-layout__box{
@@ -13,10 +12,17 @@
     border-radius: 3px;
     padding:$l-size $m-size ;
     text-align: center;
-    width: 25rem;
+    flex:1;
+    height: 100vh;
+    background: gainsboro;
 }
 
 .box-layout__title{
     margin: 0 0 $m-size 0;
     line-height: 1;
+}
+
+.box-layout-main{
+    display: flex;
+    
 }
