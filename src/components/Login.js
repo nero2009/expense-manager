@@ -21,16 +21,35 @@ export class Modal extends Component {
             password:''
         }
     }
+
+    handleChange=(e)=>{
+        this.setState(()=>{
+            return{
+                [e.target.name]:e.target.value
+            }
+        })
+    }
+
+    submit=()=>{
+        e.preventDefault()
+    }
     render () {
         return (
-            <div className="Modal">
+            <div className="move-right">
+            <div className="Modal ">
                 <form onSubmit={this.props.onSubmit} className="ModalForm">
-					<Input id="name" type="text" placeholder="Jack-Edward Oliver" />
-					<Input id="username" type="email" placeholder="mrjackolai@gmail.com" />
-					<Input id="password" type="password" placeholder="password" />
-					<button>Log in <i className="fa fa-fw fa-chevron-right"></i></button>
-                    <button>Log in with Google <i className="fa fa-fw fa-chevron-right"></i></button>
+					<Input name="email" type="email" placeholder="mrjackolai@gmail.com" value={this.state.email} onChange={this.handleChange} />
+					<Input name="password" type="password" placeholder="password" value={this.state.password} onChange={this.handleChange} />
+                    <div className="button-container">
+                        <button>Log in<i className="fa fa-fw fa-chevron-right"></i></button>
+                        <button>Register<i className="fa fa-fw fa-chevron-right"></i></button>
+                    </div>
+                    <button class="loginBtn loginBtn--google">
+                        Login with Google
+                    </button>
+                    <p>By signing up, you agree to the <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a></p>
 				</form>
+                </div>
             </div>
         )
     }

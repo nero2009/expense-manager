@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Archivo+Narrow|Varela+Round');
+
+$font-stack1:'Varela Round', sans-serif;
+$font-stack2:'Archivo Narrow', sans-serif;
+
+.header{
+   font-family: $font-stack1;
+   background: none; 
+    font-size: 40px;
+    color: white;
+    z-index: 2;
+}
