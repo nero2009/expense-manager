@@ -72,7 +72,7 @@ class ExpenseForm extends Component {
     render () {
         return (
             
-                <form className="form" onSubmit={this.onSubmit}>
+                <form className="form" >
                     {this.state.error && <p className="form__error">{this.state.error}</p>}
 
                     <div className="form-group input-effect">
@@ -109,9 +109,10 @@ class ExpenseForm extends Component {
                     </div>
                     <br/>
                     <div>
-                        <button className="button">Save Expense</button>
+                        <button className="button" onClick={this.onSubmit}>Save Expense</button>
+                        
                     </div>
-                    
+                    <button className="button">Cancel</button>
                 </form>
             
         )

@@ -12,7 +12,7 @@ export const LoginPage = ({startLogin}) => {
                     <Typist ></Typist>
                 </div>
                 <div className="box-layout-login">
-                    <Modal ></Modal>
+                    <Modal login={startLogin}/>
                 </div>
                 
             </div>

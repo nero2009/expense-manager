@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-
-
+import { Link } from "react-router-dom";
+import {connect} from 'react-redux'
+import {startLogin, startLoginWithGoogle} from '../actions/auth'
 
 export function Input(props){
     return(
         <div className="Input">
-				<input id={props.name}  required type={props.type} placeholder={props.placeholder} />	
+				<input id={props.name} placeholder={props.placeholder} />	
 				<label htmlFor={props.name}></label>
 			</div>
     )
@@ -30,30 +31,40 @@ export class Modal extends Component {
         })
     }
 
-    submit=()=>{
+    submit=(e)=>{
+        console.log('clicked')
         e.preventDefault()
+        this.props.login();
     }
+
     render () {
+        console.log(this.props)
         return (
             <div className="move-right">
             <div className="Modal ">
-                <form onSubmit={this.props.onSubmit} className="ModalForm">
-					<Input name="email" type="email" placeholder="mrjackolai@gmail.com" value={this.state.email} onChange={this.handleChange} />
+                <form  className="ModalForm">
+					<Input name="email" type="email" placeholder="nero@expense.com" value={this.state.email} onChange={this.handleChange} />
 					<Input name="password" type="password" placeholder="password" value={this.state.password} onChange={this.handleChange} />
                     <div className="button-container">
-                        <button>Log in<i className="fa fa-fw fa-chevron-right"></i></button>
-                        <button>Register<i className="fa fa-fw fa-chevron-right"></i></button>
+                        <button className="login">Log in<i className="fa fa-fw fa-chevron-right"></i></button>
                     </div>
-                    <button class="loginBtn loginBtn--google">
+                    <span className="login-option-label">or connect with</span>
+                    <button className="loginBtn loginBtn--google" onClick={this.submit}>
                         Login with Google
                     </button>
-                    <p>By signing up, you agree to the <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a></p>
+                    <p className="register-text">Not registered, <Link to="/create">Register now</Link></p>
+                    <p className="login-text">By signing up, you agree to the <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a></p>
 				</form>
+               
                 </div>
             </div>
         )
     }
 }
 
+const mapDispatchToProps =(dispatch)=>({
+    startLogin:()=> dispatch(startLoginWithGoogle())
+})
 
+export default connect(undefined,mapDispatchToProps)(Modal)
 

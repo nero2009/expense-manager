@@ -95,11 +95,11 @@ $cosmiclatte: #FFFCE8;
 }
 
 // Button
-button {
+button.login {
 	align-items: center;
 	background: $cinnabar;
 	border: 0;
-	border-radius: 3px;
+	border-radius: 15px;
 	color: white;
 	display: inline-block;
 	margin-right: 10px;
@@ -111,7 +111,7 @@ button {
 	outline: none;
 	padding: 10px 9px 10px 11px;
 	text-transform: uppercase;
-	
+	width: 100%;
 	
 	.fa {
 		font-size: 12px;
@@ -157,15 +157,16 @@ button {
 .loginBtn {
 	box-sizing: border-box;
 	position: relative;
-	/* width: 13em;  - apply for fixed size */
-	margin: 0.2em;
+	width: 100%;
 	padding: 0 15px 0 46px;
 	border: none;
-	text-align: left;
+	text-align: center;
 	line-height: 34px;
 	white-space: nowrap;
-	border-radius: 0.2em;
-	font-size: 16px;
+	border-radius: 15px;
+	font-family: $font;
+	font-size: 13px;
+	font-weight: 500;
 	color: #FFF;
   }
   .loginBtn:before {
@@ -201,3 +202,32 @@ button {
 	text-align: center;
   }
 
+span.login-option-label{
+	color: grey;
+}
+
+span.login-option-label:after{
+	content:"  ------------";
+	padding-right:15px;
+	letter-spacing:-1px;
+	color:grey;
+}
+span.login-option-label:before{
+	content:"------------  ";
+	padding-left:15px;
+	letter-spacing:-1px;
+	color:grey;
+}
+
+p.login-text{
+	text-align: center;
+	color: white;
+	font-size: 10px;
+}
+
+p.register-text{
+	text-align: center;
+	color: white;
+	font-size: 15px;
+	padding-bottom: 25px;
+}
