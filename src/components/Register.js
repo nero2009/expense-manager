@@ -3,17 +3,19 @@ import RegisterForm from './RegisterForm'
 
 const Register = (props) => {
     return (
-       <div>
-        <div className="page-header">
-            <div className="content-container">
-                <h1 className="page-header__title">Register</h1>
+        <div className="register-container">
+            <div style={{margin:"0 auto", width:"400px"}}>
+                <div style={{textAlign:"center"}}>
+                        <h1 >Expense Manager</h1>
+                        <h3>Sign Up</h3>
+                    </div>
+                    <div >
+                    `   <RegisterForm></RegisterForm>
+                    </div>
             </div>
         </div>
-            <div className="content-container">
-            <RegisterForm></RegisterForm>
-        </div>
-       </div>
     )
 }
 
 export default Register
+

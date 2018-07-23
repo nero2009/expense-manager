@@ -52,7 +52,7 @@ export class Modal extends Component {
                     <button className="loginBtn loginBtn--google" onClick={this.submit}>
                         Login with Google
                     </button>
-                    <p className="register-text">Not registered, <Link to="/create">Register now</Link></p>
+                    <p className="register-text">Not registered, <Link to="/register">Register now</Link></p>
                     <p className="login-text">By signing up, you agree to the <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a></p>
 				</form>
                
