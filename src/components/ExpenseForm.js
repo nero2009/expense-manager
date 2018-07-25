@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import moment from 'moment'
 import {SingleDatePicker} from 'react-dates'
+import { withRouter } from "react-router-dom";
 
 import 'react-dates/initialize'
 
@@ -50,6 +51,12 @@ class ExpenseForm extends Component {
 
     onFocusChange =({focused})=>{
         this.setState(()=>({calendarFocused:focused}))
+    }
+
+    cancel=(e)=>{
+        e.preventDefault();
+        console.log(this.props)
+        this.props.history.push('/dashboard')
     }
 
 
@@ -110,13 +117,13 @@ class ExpenseForm extends Component {
                     <br/>
                     <div>
                         <button className="button" onClick={this.onSubmit}>Save Expense</button>
-                        
+                        <button className="cancel-button" style={{float:"right", width:"140px"}} onClick={this.cancel}>Cancel</button> 
                     </div>
-                    <button className="button">Cancel</button>
+                    
                 </form>
             
         )
     }
 }
 
-export default ExpenseForm
+export default withRouter(ExpenseForm)

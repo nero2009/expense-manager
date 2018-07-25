@@ -4,7 +4,7 @@ import {startLogin, startLoginWithGoogle} from '../actions/auth'
 import {Modal} from './Login'
 import Typist from '../components/Typist/Typist'
 
-export const LoginPage = ({startLogin}) => {
+export const LoginPage = ({startLogin,startLoginWithGoogle}) => {
     return (
         <div className="box-layout-main">
             <div className="box-layout">
@@ -12,7 +12,7 @@ export const LoginPage = ({startLogin}) => {
                     <Typist ></Typist>
                 </div>
                 <div className="box-layout-login">
-                    <Modal login={startLogin}/>
+                    <Modal googleLogin={startLoginWithGoogle} login={startLogin}/>
                 </div>
                 
             </div>
@@ -22,7 +22,8 @@ export const LoginPage = ({startLogin}) => {
 };
 
 const mapDispatchToProps =(dispatch)=>({
-    startLogin:()=> dispatch(startLoginWithGoogle())
+    startLoginWithGoogle:()=> dispatch(startLoginWithGoogle()),
+    startLogin:(email,pass)=> dispatch(startLogin(email,pass)),
 })
 
 export default connect(undefined,mapDispatchToProps)(LoginPage)

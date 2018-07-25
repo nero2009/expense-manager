@@ -4,7 +4,7 @@ import Type from 'react-typist';
 const Typist = () => {
     return (
         <div className="header-typist">
-            <Type>
+            <Type cursor= {{hideWhenDone:true}}>
             <span > It's time to get your expenses under control </span>
                 <Type.Backspace count={33} delay={400} />
             <span> track your expenses </span>

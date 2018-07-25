@@ -1,6 +1,26 @@
 
 .register-container{
-    flex:1;
+    align-items: center;
+   
+    background-color: #464646;
+    overflow: hidden;
     background-size: cover;
-    background-color: rgba(128, 128, 128, 0.671)
+    width: 100%;
+    min-height: 100vh;
+   
 }
+
+.Sign-up-header{
+    color:white;
+    text-decoration: none;
+}
+
+.Sign-up-header:hover{
+    color:grey;
+    text-decoration: none;
+}
+
+.Sign-up-header Link{
+    text-decoration: none;
+}
+

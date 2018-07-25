@@ -11,7 +11,7 @@ import PrivateRoute from './PrivateRoute'
 import PublicRoute from './PublicRoute'
 import TestLogin from '../components/TestLogin';
 import { Modal } from '../components/Login';
-import Typist from '../components/Typist/Typist';
+
 import Register from '../components/Register'
 
 export const history = createHistory()
@@ -21,7 +21,7 @@ const AppRouter = () => (
     <div>
       
       <Switch>
-        <PublicRoute path="/" component={Register} exact={true} />
+        <PublicRoute path="/" component={LoginPage} exact={true} />
         <PublicRoute path="/register" component={Register}/>
         <PrivateRoute path="/dashboard" component={ExpenseDashboardPage}/>
         <PrivateRoute path="/create" component={AddExpensePage} />
