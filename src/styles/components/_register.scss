@@ -24,3 +24,9 @@
     text-decoration: none;
 }
 
+@media screen and (max-width: 680px) {
+   input.register-form{
+       width:50px;
+   }
+}
+

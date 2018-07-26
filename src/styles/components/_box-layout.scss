@@ -3,9 +3,9 @@
     align-items: center;
     background: url('/images/bg.jpg');
     background-size: cover;
-    flex: 1;
+    
     height: 100vh;
-    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .box-layout__box{
@@ -13,7 +13,6 @@
     border-radius: 3px;
     padding:$l-size $m-size ;
     text-align: center;
-    
     height: 100vh;
     background: gainsboro;
 }
@@ -34,3 +33,46 @@
 .box-layout-login{
     flex: 1;
 }
+
+@media screen and (max-width: 680px){
+    .box-layout-title{
+        display: none;
+    }
+
+    .box-layout-mobile_title{
+        margin: auto;
+        
+        
+    }
+
+    .box-layout-mobile_title h1{
+        margin: auto;
+        color:white;
+       
+
+        &:hover{
+            color:gray;
+        }
+    }
+
+    
+
+    .box-layout-login{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    
+}
+    
+
+
+@media screen and (min-width: 680px) {
+    .box-layout-mobile_title{
+        display:none;
+        
+    }
+}
+
+

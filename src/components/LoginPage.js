@@ -6,18 +6,23 @@ import Typist from '../components/Typist/Typist'
 
 export const LoginPage = ({startLogin,startLoginWithGoogle}) => {
     return (
-        <div className="box-layout-main">
-            <div className="box-layout">
-                <div className="box-layout-title">
+        <div className="container-fluid">
+            <div className="box-layout row">
+                <div className="box-layout-title ">
                     <Typist ></Typist>
                 </div>
-                <div className="box-layout-login">
+                <div className="box-layout-mobile_title">
+                    <h1 className="mobile-text" >Expense Manager</h1>
+                </div>
+                <div className="box-layout-login ">
                     <Modal googleLogin={startLoginWithGoogle} login={startLogin}/>
                 </div>
                 
             </div>
            
         </div>
+            
+        
     );
 };
 
