@@ -24,9 +24,41 @@
     text-decoration: none;
 }
 
+.form-group-register label{
+    display: block;
+}
+
+input.register-form{
+    padding: $m-size;
+    font-size: $font-size-large;
+    font-weight: 300;
+    color: #333;
+    width: 400px;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+    height: 50px;
+    border: 1px solid #cacccd;
+    
+    border-radius: 10px;
+
+}
+
 @media screen and (max-width: 680px) {
    input.register-form{
-       width:50px;
+       width:300px;
+       font-size: 15px;
+       font-weight: 200;
    }
+
+   button.register{
+       width:25%;
+       left: 50px;
+       position: relative;
+   }
+}
+
+.form-group-register{
+    position: relative;
+    margin: 0 auto;
 }
 
