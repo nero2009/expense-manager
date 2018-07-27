@@ -1,6 +1,6 @@
 .form-group{
      position: relative;
-    } /* necessary to give position: relative to parent. */
+    } 
 input[type="text"]{
     padding: $m-size;
     font-size: $font-size-large;
@@ -14,9 +14,6 @@ input[type="text"]{
     
  }
 
-
-
- 
 
 .textarea{
     @extend input[type="text"];

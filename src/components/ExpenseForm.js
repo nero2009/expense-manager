@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import moment from 'moment'
 import {SingleDatePicker} from 'react-dates'
 import { withRouter } from "react-router-dom";
+import swal from 'sweetalert'
 
 import 'react-dates/initialize'
 
@@ -67,6 +68,7 @@ class ExpenseForm extends Component {
           this.setState(() => ({ error: 'Please provide description and amount.' }));
         } else {
           this.setState(() => ({ error: '' }));
+          swal("Expense Added", "","success");
           this.props.onSubmit({
             description: this.state.description,
             amount: parseFloat(this.state.amount, 10) * 100,

@@ -8,7 +8,8 @@ class RegisterForm extends Component {
             firstName:'',
             lastName:'',
             email:'',
-            password:''
+            password:'',
+            error:''
         }
     }
 
@@ -20,9 +21,13 @@ class RegisterForm extends Component {
 
     submit =(e)=>{
         e.preventDefault()
-        const {email, password} = this.state
-        this.props.createUser(email,password)
-
+        if (!this.state.firstName || !this.state.lastName || !this.state.email || !this.state.password) {
+            this.setState(() => ({ error: 'Please Credentials' }));
+        }else{
+            const {email, password} = this.state
+            this.props.createUser(email,password)
+        }   
+        
     }
     
     render () {
@@ -30,7 +35,7 @@ class RegisterForm extends Component {
         return (
             <div>
                 <form className="form" onSubmit={this.onSubmit}>
-                    {this.state.error && <p className="form__error">{this.state.error}</p>}
+                    {this.state.error && <p className="register__error">{this.state.error}</p>}
 
                     <div className="form-group-register ">
                         <label className="register-label">First Name</label>
