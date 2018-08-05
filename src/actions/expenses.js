@@ -1,5 +1,7 @@
 import uuid from 'uuid';
 import database from '../firebase/firebase'
+import {history} from '../routers/AppRouter'
+
 // ADD_EXPENSE
 export const addExpense = (expense) => ({
   type: 'ADD_EXPENSE',
@@ -37,6 +39,12 @@ export const startRemoveExpense=({ id } = {})=>{
     return database.ref(`users/${uid}/expenses/${id}`).remove().then(()=>{
       dispatch(removeExpense({id}))
     })
+  }
+}
+
+export const editExpensePage =(id)=>{
+  return ()=>{
+    history.push(`/edit/${id}`)
   }
 }
 

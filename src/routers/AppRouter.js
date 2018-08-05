@@ -9,8 +9,10 @@ import NotFoundPage from '../components/NotFoundPage';
 import LoginPage from '../components/LoginPage'
 import PrivateRoute from './PrivateRoute'
 import PublicRoute from './PublicRoute'
-import TestLogin from '../components/TestLogin';
+import DashboardRouter from './DashboardRouter'
+
 import { Modal } from '../components/Login';
+import Dashboard from '../components/Dashboard'
 
 import Register from '../components/Register'
 
@@ -23,7 +25,7 @@ const AppRouter = () => (
       <Switch>
         <PublicRoute path="/" component={LoginPage} exact={true} />
         <PublicRoute path="/register" component={Register}/>
-        <PrivateRoute path="/dashboard" component={ExpenseDashboardPage}/>
+        <DashboardRouter path="/dashboard" component={Dashboard}/>
         <PrivateRoute path="/create" component={AddExpensePage} />
         <PrivateRoute path="/edit/:id" component={EditExpensePage} />
         <Route path="/help" component={HelpPage} />

@@ -7,6 +7,7 @@ import { startSetExpenses } from './actions/expenses';
 import { login,logout } from './actions/auth';
 import getVisibleExpenses from './selectors/expenses';
 import 'normalize.css/normalize.css';
+import './components/assets/css/material-dashboard-react.css'
 import './styles/styles.scss';
 import 'react-dates/lib/css/_datepicker.css'
 import {firebase} from './firebase/firebase'
